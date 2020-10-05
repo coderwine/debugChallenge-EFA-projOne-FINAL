@@ -1,0 +1,16 @@
+.foodCart {
+    display: grid;
+    /* justify-content: space-evenly; */
+    justify-content: space-evenly;
+}
+
+.rest-Images {
+    height: 200px;
+    width: 200px;
+    background-repeat: no-repeat;
+    background-position: center;
+    /* background-size: 100%; */
+    margin: 1em;
+}
+
+

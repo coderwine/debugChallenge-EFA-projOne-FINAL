@@ -1,0 +1,88 @@
+@import '../styles/weather.css';
+@import '../styles/zomato.css';
+@import '../styles/quotes.css';
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}    
+
+/* JUMBOTRON */
+/* 
+.jumbotron {
+    margin-bottom: 1em;
+    height: 80vh;
+    width: 100vw;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    background: url('../assets/baseBG-IMG.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+} */
+
+/* FORM */
+
+/* form div {
+    display: grid;
+    justify-content: center;
+}
+
+form div input {
+    margin-bottom: .5em;
+} */
+
+/* WEATHER CARD */
+/* 
+div .card {
+    margin-top: .5em;
+    padding: .5em;
+    background-color: rgba(255,255,255, .45);
+}
+
+div .card img {
+    justify-content: center;
+    align-self: center;
+}
+
+div .card ul li {
+    list-style-type: none;
+} */
+
+/* RESTAURANTS */
+
+/* .foodCart {
+    display: grid;
+    justify-content: space-evenly;
+}
+
+.rest-Images {
+    height: 200px;
+    width: 200px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    margin: 1em;
+} */
+
+/* QUOTES */
+/* 
+.quote {
+    height: 20vh;
+    z-index: 0;
+    margin-top: .15em;
+    overflow: scroll;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+#nxtBtn {
+    position: absolute;
+    right: 3em;
+    bottom: 18vh;
+    z-index: 3;
+    width: 35px;
+    height: 35px;
+} */

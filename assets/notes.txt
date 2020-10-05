@@ -1,0 +1,32 @@
+API Docs:
+- Programming Quotes:
+        https://github.com/skolakoda/programming-quotes-api
+- Weatherstack: 
+        https://weatherstack.com/documentation
+- Zomato API:
+        https://developers.zomato.com/api
+
+____________________________________
+Bootstrap notes:
+ - Modal
+ - Jumbotron
+ - Form
+ - Card
+ - Nav
+
+____________________________________
+process:
+    - temp < 32F - cold image *done
+    - temp > 32F but < 75 - "Spring Iamge" *done
+    - temp > 75 - "Summer Image"  *done
+    - rain > 75% & temp < 32 - "Cold Rainy Image" *done
+    - rain > 75% & temp > 32 < 75 - "Spring Rain" *done
+    - rain > 75% & temp > 75 "Hot Rain" *done
+    - base image *done
+    - win image *done
+
+
+____________________________________
+Additional Notes:
+Symbol convert: 
+- https://www.w3schools.com/charsets/ref_utf_letterlike.asp
