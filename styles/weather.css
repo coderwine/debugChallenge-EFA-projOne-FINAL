@@ -2,14 +2,16 @@
 
 .jumbotron {
     margin-bottom: 1em;
-    height: 80vh;
     width: 100vw;
     overflow-x: hidden;
-    overflow-y: scroll;
     scroll-behavior: smooth;
-    background: url('../assets/baseBG-IMG.jpg');
-    background-repeat: no-repeat;
     background-position: center;
+    background-size: cover;
+}
+
+.jumbotron h1 {
+    color: white;
+    text-shadow: 2px 2px 2px black;
 }
 
 /* FORM */
@@ -28,7 +30,7 @@ form div input {
 div .card {
     margin-top: .5em;
     padding: .5em;
-    background-color: rgba(255,255,255, .45);
+    background-color: rgba(255,255,255, .85);
 }
 
 div .card img {

@@ -1,7 +1,16 @@
 .foodCart {
+    /* display: flex; */
     display: grid;
-    /* justify-content: space-evenly; */
-    justify-content: space-evenly;
+    /* flex-direction: row; */
+    grid-auto-flow: column;
+    justify-content: space-around;
+    align-content: center;
+}
+
+#foodMain h4 {
+    color: white;
+    text-shadow: 2px 2px 2px black;
+    text-align: center;
 }
 
 .rest-Images {
@@ -11,6 +20,17 @@
     background-position: center;
     /* background-size: 100%; */
     margin: 1em;
+    border-radius: 10px;
 }
 
+@media only screen and (max-width: 550px) {
+    .foodCart {
+        grid-auto-flow: row;
+    }
 
+    .rest-Images{
+        /* grid-auto-flow: row;
+        align-content: space-evenly; */
+        border: 1px solid black;
+    }
+} 

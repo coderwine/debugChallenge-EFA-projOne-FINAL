@@ -22,24 +22,28 @@ let getFood = (data) => {
         foodMain.firstChild.remove();
     }
 
-    //TODO: Need to account for cities that have no collections available. Account for cities that have less than 3 / 2 responses.
-    for(let i = 0; i < 3; i++) {
-        let randomPOS = Math.floor(Math.random() * collections.length);
+    function cyclePush() {
 
-        let posFunc = () => {
-            i === 2 && cycle[0] != randomPOS && cycle[1] != randomPOS ?
-            cycle.push(randomPOS) : i === 1 && cycle[1] != randomPOS ? 
-            cycle.push(randomPOS) : cycle.push(randomPOS);
-
-        // console.log('Cycle: ', cycle);
-        // console.log('Loop Index: ', i);
-        // console.log('Rando: ', randomPOS);
-        // console.log('Cycle POS -1: ', cycle[i]);
+        for(let i = 0; i < 3; i++) {
+            let randomPOS = Math.floor(Math.random() * collections.length);
+            
+            // TODO: Still need to account for duplicated random positions
+            let posFunc = () => {
+                i === 2 && cycle[0] != randomPOS && cycle[1] != randomPOS ?
+                cycle.push(randomPOS) : i === 1 && cycle[0] != randomPOS ? 
+                cycle.push(randomPOS) : cycle.push(randomPOS);
+    
+            // console.log('Cycle: ', cycle);
+            // console.log('Loop Index: ', i);
+            // console.log('Rando: ', randomPOS);
+            // console.log('Cycle POS -1: ', cycle[i]);
+            }
+    
+            posFunc();
+    
         }
-
-        posFunc();
-
     }
+    collections.length >= 3 ? cyclePush() : collections.length === 2 ? cycle.push(0) && cycle.push(1) : collections.length === 1 ? cycle.push(0) : null; 
     
     console.log('After loop: ', cycle);
 
@@ -65,6 +69,7 @@ let getFood = (data) => {
         resLink.alt = foodTitle;
         resLink.target = '_blank';
         resDiv.className = 'rest-Images';
+        resDiv.alt = foodTitle;
         resDiv.style = `
             background-image: url(${foodImg});
         `;
@@ -113,7 +118,7 @@ async function zomFetch() {
 }
 
 function noCollection(city) {
-    console.log(`${city} does not have any collections!`);
+    // console.log(`${city} does not have any collections!`);
 
     setTimeout(() => {
         alert(`${city} does not have any restuarants listed.`);

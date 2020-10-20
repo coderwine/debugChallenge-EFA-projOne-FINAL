@@ -7,7 +7,6 @@ let weatherURL;
 let search;
 
 // LOCATION
-// const form = document.querySelector('form');
 const formInput = document.getElementById('cityInput');
 
 let weatherFetch = () => {
@@ -27,15 +26,16 @@ let weatherFetch = () => {
 }
 
 function weatherCard(apiData) {
-    console.log(apiData);
+    // console.log(apiData);
     formInput.value = '';
+    wCardDisplay.style = 'display: visible';
 
     // VARIABLES
     let location = apiData.location;
     let current = apiData.current;
     let fahDeg = 32;
-    let temp = current.temperature + fahDeg
-    let fLike = current.feelslike + fahDeg
+    let temp = current.temperature * 1.8 + fahDeg
+    let fLike = current.feelslike * 1.8 + fahDeg
     let precip = apiData.current.precip;
 
     //  CREATE / LOCATE
@@ -50,29 +50,57 @@ function weatherCard(apiData) {
     const ul = document.createElement('ul');
     
     // BACKGROUND
-    // switch(true) {
-    //     case prec > 75 && Math.floor(temp) < 32:
-    //         jumbo.style = 'background: url(../assets/01-coldSnow.jpg)';
-    //         break;
-    //     case prec > 75 && Math.floor(temp) < 75:
-    //         jumbo.style = 'background: url(../assets/02-warmRain.jpg)';
-    //         break;
-    //     case prec > 75 && Math.floor(temp) > 75:
-    //         jumbo.style = 'background: url(../assets/03-summerRain.jpg)';
-    //         break;
-    //     case Math.floor(temp) < 32:
-    //         jumbo.style = 'background: url(../assets/04-winter.jpg)';
-    //         break;
-    //     case Math.floor(temp) < 75:
-    //         jumbo.style = 'background: url(../assets/05-spring.jpg)';
-    //         break;
-    //     case Math.floor(temp) > 75:
-    //         jumbo.style = 'background: url(../assets/06-summer.jpg)';
-    //         break;
-    //     default:
-    //         jumbo.style = 'background: url(../assets/baseBG-IMG.jpg)';
-    //         break;
-    // }
+
+    //!TESTING
+    // temp = 20;
+    // precip = 30;
+    // console.log(temp);
+    // console.log(precip);
+
+    switch(true) {
+            case precip >= 75 && Math.floor(temp) < 33:
+                jumbo.setAttribute(
+                    'style', 
+                    'background: url("../assets/01-coldSnow.jpg"); background-repeat: no-repeat; background-position: center; background-size: cover;'
+                )
+                break;
+            case precip >= 75 && Math.floor(temp) <= 75:
+                jumbo.setAttribute(
+                    'style', 
+                    'background: url("../assets/02-warmRain.jpg"); background-repeat: no-repeat; background-position: center; background-size: cover;'
+                )
+                break;
+            case precip >= 75 && Math.floor(temp) > 75:
+                jumbo.setAttribute(
+                    'style', 
+                    'background: url("../assets/03-summerRain.jpg"); background-repeat: no-repeat; background-position: center; background-size: cover;'
+                )
+                break;
+            case Math.floor(temp) < 33:
+                jumbo.setAttribute(
+                    'style', 
+                    'background: url("../assets/04-winter.jpg"); background-repeat: no-repeat; background-position: center; background-size: cover; height: 100vh'
+                )
+                break;
+            case Math.floor(temp) < 75:
+                jumbo.setAttribute(
+                    'style', 
+                    'background: url("../assets/05-spring.jpg"); background-repeat: no-repeat; background-position: center; background-size: cover;'
+                )
+                break;
+            case Math.floor(temp) > 75:
+                jumbo.setAttribute(
+                    'style', 
+                    'background: url("../assets/06-summer.jpg"); background-repeat: no-repeat; background-position: center; background-size: cover;'
+                )
+                break;
+            default:
+                jumbo.setAttribute(
+                    'style', 
+                    'background: url("../assets/baseBG-IMG.jpg"); background-repeat: no-repeat; background-position: center; background-size: cover;'
+                )
+                break;
+    }
 
     // CLEANUP
     while(mainCard.firstChild) {
@@ -114,14 +142,3 @@ function weatherCard(apiData) {
 function background() {
 
 }
-/*
-TODO:
-    - temp < 32F - cold image *done
-    - temp > 32F but < 75 - "Spring Iamge" *done
-    - temp > 75 - "Summer Image"  *done
-    - rain > 75% & temp < 32 - "Cold Rainy Image" *done
-    - rain > 75% & temp > 32 < 75 - "Spring Rain" *done
-    - rain > 75% & temp > 75 "Hot Rain" *done
-    - base image *done
-    - win image *done
-*/

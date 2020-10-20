@@ -1,12 +1,14 @@
 const progURL = 'https://programming-quotes-api.herokuapp.com/quotes'
 
 // LOCATION
-const jumbo = document.getElementById('jumbo');
+// const jumbo = document.getElementById('jumbo');
+const jumbo = document.querySelector('.jumbotron');
 const startBtn = document.getElementById('start-btn');
 const foodMain = document.querySelector('.foodCart');
 const nxtBtn = document.getElementById('nxtBtn');
 const navFoot = document.querySelector('.quote');
 const toast = document.getElementsByClassName('toast-body');
+const wCardDisplay = document.querySelector('.displayCard');
 
 // GLOBAL VARIABLES
 let cycle = 1;
@@ -15,6 +17,13 @@ let cityLocation;
 // DEFAULT VALUES
 navFoot.style = 'display: none';
 nxtBtn.style = 'display: none';
+wCardDisplay.style = 'display: none';
+// jumbo.style = 'height: 100vh';
+jumbo.setAttribute(
+    'style', 
+    'background: url("../assets/baseBG-IMG.jpg"); background-repeat: no-repeat; background-position: center; background-size: cover; height: 100vh'
+    // 'background: url("../assets/04-winter.jpg"); background-repeat: no-repeat; background-position: center; background-size: cover; height: 100vh'
+)
 
 // LISTENERS
 startBtn.addEventListener('click', startSearch);
@@ -31,6 +40,8 @@ let fetchProg = () => {
 
 // DISPLAY 
 function display (data) {
+
+    jumbo.style = 'height: 80vh';
 
     // CREATE
     const name = document.createElement('h4');

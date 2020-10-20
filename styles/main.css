@@ -7,82 +7,36 @@ body {
     padding: 0;
     display: flex;
     justify-content: center;
-}    
+}
 
-/* JUMBOTRON */
-/* 
-.jumbotron {
+/* DO NOT TOUCH MODAL CODE */
+.modBTN {
+    position: fixed;
+    top: 1em;
+    right: 1em;
+    border: 1px solid white;
+    border-radius: 200px;
+}
+
+.modal-body #bronze {
+    padding: .2em;
+    border: 3px solid #da7618;
+    background-color: #da7618;
+    border-radius: 10px;
     margin-bottom: 1em;
-    height: 80vh;
-    width: 100vw;
-    overflow-x: hidden;
-    overflow-y: scroll;
-    scroll-behavior: smooth;
-    background: url('../assets/baseBG-IMG.jpg');
-    background-repeat: no-repeat;
-    background-position: center;
-} */
-
-/* FORM */
-
-/* form div {
-    display: grid;
-    justify-content: center;
 }
-
-form div input {
-    margin-bottom: .5em;
-} */
-
-/* WEATHER CARD */
-/* 
-div .card {
-    margin-top: .5em;
-    padding: .5em;
-    background-color: rgba(255,255,255, .45);
+.modal-body #silver {
+    padding: .2em;
+    border: 3px solid #a2a2a2;
+    background-color: #a2a2a2;
+    border-radius: 10px;
+    margin-bottom: 1em;
 }
-
-div .card img {
-    justify-content: center;
-    align-self: center;
+.modal-body #gold {
+    padding: .2em;
+    border: 3px solid #b6b900;
+    background-color: #b6b900;
+    border-radius: 10px;
+    margin-bottom: 1em;
 }
-
-div .card ul li {
-    list-style-type: none;
-} */
-
-/* RESTAURANTS */
-
-/* .foodCart {
-    display: grid;
-    justify-content: space-evenly;
-}
-
-.rest-Images {
-    height: 200px;
-    width: 200px;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 100%;
-    margin: 1em;
-} */
-
-/* QUOTES */
-/* 
-.quote {
-    height: 20vh;
-    z-index: 0;
-    margin-top: .15em;
-    overflow: scroll;
-    scroll-behavior: smooth;
-    overflow-x: hidden;
-}
-
-#nxtBtn {
-    position: absolute;
-    right: 3em;
-    bottom: 18vh;
-    z-index: 3;
-    width: 35px;
-    height: 35px;
-} */
+/* DO NOT TOUCH ABOVE MODAL CODE */
