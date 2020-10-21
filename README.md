@@ -37,15 +37,18 @@
 
 **Basic Errors:**
 - index.html has 4 errors and main.css has 1* error (no imports for other stylesheets).
+
 **Programming Quote:**
 - This will populate a random quote at the bottom of the screen.  Users will be able to click a button to fetch a new quote.
 - Simple fetch()
 - There are a total of 10* errors (6 breaking JS / 2 needing backtracked for Silver & Gold / 2 breaking CSS)
+
 **Weather Stack:**
 - Requires API Key
 - The user will need to input a US city, click submit and populate a Bootstrap card with various sets of information.
 - Async/Await - Fired upon user submission
 - There are a total of 14* errors (13 breaking JS / 1 helper JS / 3 breaking CSS)
+
 **Zomato:**
 - Requires API Key set into headers
 - When the user searches a city for the weather, this will pass that information through search criteria to pull an id.  The id will be used to search a set of collections of a max of 3 different random restaurants in the area.  These will be built using DOM manipulation an displayed under the weather card.
