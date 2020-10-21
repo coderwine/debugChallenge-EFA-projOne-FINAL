@@ -1,19 +1,15 @@
-//Documentation: https://developers.zomato.com/api#headline1
-
-const zomKey = '9262491e575911ed73c7c6774571941d';
 const zomURL = 'https://developers.zomato.com/api/v2.1';
 
+// API KEY setup
 const zomHead = {
     headers: {
         'user-key' : zomKey
     }
 }
 
-// console.log(foodMain);
-
 // DISPLAY
 let getFood = (data) => {
-    console.log('getFood: ', data.collections);
+
     let collections = data.collections;
     let cycle = []
 
@@ -22,37 +18,38 @@ let getFood = (data) => {
         foodMain.firstChild.remove();
     }
 
+    // Randomly pulls 3 items from the collections array within Zomato and stores the values.  These values will be used for our display.
     function cyclePush() {
 
-        for(let i = 0; i < 3; i++) {
-            let randomPOS = Math.floor(Math.random() * collections.length);
-            
-            // TODO: Still need to account for duplicated random positions
-            let posFunc = () => {
-                i === 2 && cycle[0] != randomPOS && cycle[1] != randomPOS ?
-                cycle.push(randomPOS) : i === 1 && cycle[0] != randomPOS ? 
-                cycle.push(randomPOS) : cycle.push(randomPOS);
-    
-            // console.log('Cycle: ', cycle);
-            // console.log('Loop Index: ', i);
-            // console.log('Rando: ', randomPOS);
-            // console.log('Cycle POS -1: ', cycle[i]);
-            }
-    
-            posFunc();
-    
+        let randomPOS = Math.floor(Math.random() * collections.length);
+
+        posFun(randomPOS);
+    }
+
+    // Checks if cycle length is 3 or less for displaying
+    cycle.length < 4 ? cyclePush() : null;
+
+    // Checks to see if duplicates exist and corrects if there are any.
+    function posFun(num) {
+        if(cycle.length === 2) {
+            num !== cycle[1] || num !== cycle[0] ? cycle.push(num) : cyclePush();
+        } else if (cycle.length === 1) {
+            num !== cycle[0] ? cycle.push(num) : null;
+            cyclePush();
+        } else if (cycle.length === 0) {
+            cycle.push(num)
+            cyclePush();
+        } else {
+            null;
         }
     }
+
+    // Checks to see if Collections Array has less than 3 values.
     collections.length >= 3 ? cyclePush() : collections.length === 2 ? cycle.push(0) && cycle.push(1) : collections.length === 1 ? cycle.push(0) : null; 
     
-    console.log('After loop: ', cycle);
-
+    // Builds 3 collection cards for city
     for(let j = 0; j < cycle.length; j++) {
         let cyclePOS = cycle[j];
-        // console.log(cyclePOS);
-        // console.log(collections[cyclePOS].collection.image_url);
-        // console.log(collections[cyclePOS].collection.share_url);
-        // console.log(collections[cyclePOS].collection.title);
 
         // SET VARIABLES:
         let foodImg = collections[cyclePOS].collection.image_url;
@@ -93,18 +90,16 @@ async function zomFetch() {
     let loc = cityLocation;
     let foodURL = `${zomURL}/cities?q=${loc}`;
 
+    // Seeks location to find ID
     let restCity = await fetch(foodURL, zomHead);
     let zomRes = await restCity.json();
-    // console.log('zomRes: ', zomRes)
 
     let zomArr = zomRes.location_suggestions;
-    // console.log('zomArr: ', zomArr);
 
+    // Once ID is found, stored to use in new URL
     zomArr.length === 0 ? zomCityId = null : zomCityId = zomArr[0].id;
-    // console.log('city ID:', zomCityId);
 
     if(zomCityId === null) {
-        // console.log(`${loc} doesn't have any collections.`);
         noCollection(loc);
 
     } else {
@@ -117,16 +112,10 @@ async function zomFetch() {
         
 }
 
+// IF NO COLLECTIONS EXIST IN CITY
 function noCollection(city) {
-    // console.log(`${city} does not have any collections!`);
-
     setTimeout(() => {
         alert(`${city} does not have any restuarants listed.`);
-
-        //TODO: add toast from Bootstrap:
-        // alert(toast.innerText = `${city} currently doesn't have any restaurants listed.`)
-        // toast.innerText = `${city} currently doesn't have any restaurants listed.`
-        // $('.toast').toast(toast.innerText = `${city} currently doesn't have any restaurants listed.`);
     }, 1000)
 }
 

@@ -1,12 +1,10 @@
-// Documentation: https://weatherstack.com/documentation
 const weatherAPI = 'http://api.weatherstack.com/current';
-const key = '66414ad6f05cff8b25112a864c5779e8';
 
 // GLOBAL VARIABLES
 let weatherURL;
 let search;
 
-// LOCATION
+// LOCATING ELEMENTS
 const formInput = document.getElementById('cityInput');
 
 let weatherFetch = () => {
@@ -26,7 +24,7 @@ let weatherFetch = () => {
 }
 
 function weatherCard(apiData) {
-    // console.log(apiData);
+
     formInput.value = '';
     wCardDisplay.style = 'display: visible';
 
@@ -49,46 +47,51 @@ function weatherCard(apiData) {
     const header = document.createElement('h5');
     const ul = document.createElement('ul');
     
-    // BACKGROUND
+    //!TESTING - keeping in main build
+    // temp = 80;
+    // precip = 80;
+    // console.log('Temp:', temp);
+    // console.log('Perc:', precip);
 
-    //!TESTING
-    // temp = 20;
-    // precip = 30;
-    // console.log(temp);
-    // console.log(precip);
-
+    // Swapping background image in Jumbotron depending on the weather conditions provide.  Very basic.
     switch(true) {
-            case precip >= 75 && Math.floor(temp) < 33:
+            // case precip >= 75 && Math.floor(temp) < 33:
+            case precip >= 75 && temp < 33:
                 jumbo.setAttribute(
                     'style', 
                     'background: url("../assets/01-coldSnow.jpg"); background-repeat: no-repeat; background-position: center; background-size: cover;'
                 )
                 break;
-            case precip >= 75 && Math.floor(temp) <= 75:
+            // case precip >= 75 && Math.floor(temp) <= 75:
+            case precip >= 75 && temp <= 75:
                 jumbo.setAttribute(
                     'style', 
                     'background: url("../assets/02-warmRain.jpg"); background-repeat: no-repeat; background-position: center; background-size: cover;'
                 )
                 break;
-            case precip >= 75 && Math.floor(temp) > 75:
+            // case precip >= 75 && Math.floor(temp) > 75:
+            case precip >= 75 && temp > 75:
                 jumbo.setAttribute(
                     'style', 
                     'background: url("../assets/03-summerRain.jpg"); background-repeat: no-repeat; background-position: center; background-size: cover;'
                 )
                 break;
-            case Math.floor(temp) < 33:
+            // case Math.floor(temp) < 33:
+            case temp < 33:
                 jumbo.setAttribute(
                     'style', 
                     'background: url("../assets/04-winter.jpg"); background-repeat: no-repeat; background-position: center; background-size: cover; height: 100vh'
                 )
                 break;
-            case Math.floor(temp) < 75:
+            // case Math.floor(temp) < 75:
+            case temp < 75:
                 jumbo.setAttribute(
                     'style', 
                     'background: url("../assets/05-spring.jpg"); background-repeat: no-repeat; background-position: center; background-size: cover;'
                 )
                 break;
-            case Math.floor(temp) > 75:
+            // case Math.floor(temp) > 75:
+            case temp > 75:
                 jumbo.setAttribute(
                     'style', 
                     'background: url("../assets/06-summer.jpg"); background-repeat: no-repeat; background-position: center; background-size: cover;'
@@ -137,8 +140,11 @@ function weatherCard(apiData) {
     cardDiv.appendChild(cardBodyDiv);
     mainCard.appendChild(cardDiv);
 
-}
-
-function background() {
-
+    // When it is ok to search weatherstack again, the background will switch back to the main background image of Puzzles Pieces.    
+    setInterval(() => {
+        jumbo.setAttribute(
+            'style', 
+            'background: url("../assets/baseBG-IMG.jpg"); background-repeat: no-repeat; background-position: center; background-size: cover;'
+        )
+    }, 65000); // 1 min 5 secs
 }

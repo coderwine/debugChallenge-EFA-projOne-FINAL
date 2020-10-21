@@ -19,6 +19,7 @@
     background-repeat: no-repeat;
     background-position: center;
     /* background-size: 100%; */
+    border: 1px solid black;
     margin: 1em;
     border-radius: 10px;
 }
@@ -28,9 +29,9 @@
         grid-auto-flow: row;
     }
 
-    .rest-Images{
+    /* .rest-Images{ */
         /* grid-auto-flow: row;
         align-content: space-evenly; */
-        border: 1px solid black;
-    }
+        /* border: 1px solid black; */
+    /* } */
 } 
