@@ -1,11 +1,13 @@
-const weatherAPI = 'http://api.weatherstack.com/current';
+const weatherAPI = 'http://api.weatherstack.com/current'; //? 1) no const for URL
+
+//? 2) No API Key variable
 
 // GLOBAL VARIABLES
 let weatherURL;
 let search;
 
 // LOCATING ELEMENTS
-const formInput = document.getElementById('cityInput');
+const formInput = document.getElementById('cityInput'); //? 3) 'cityInput is #cityInput'
 
 let weatherFetch = () => {
 
@@ -13,8 +15,10 @@ let weatherFetch = () => {
     weatherURL = `${weatherAPI}?access_key=${key}&query=${search}`;
 
     async function weather() {
-        let res = await fetch(weatherURL);
+        let res = await fetch(weatherURL); 
         let data = await res.json();
+        //? 4) missing await in both res and data variables
+
         weatherCard(data);
     }
 
@@ -27,13 +31,15 @@ function weatherCard(apiData) {
 
     formInput.value = '';
     wCardDisplay.style = 'display: visible';
+    //? 5) wCardDisplay.style is set to "revisible" instead of visible
 
     // VARIABLES
     let location = apiData.location;
     let current = apiData.current;
     let fahDeg = 32;
-    let temp = current.temperature * 1.8 + fahDeg
-    let fLike = current.feelslike * 1.8 + fahDeg
+    let temp = current.temperature * 1.8 + fahDeg;
+    let fLike = current.feelslike * 1.8 + fahDeg;
+    //? 6) temp/fLike not calculating C to F conversion
     let precip = apiData.current.precip;
 
     //  CREATE / LOCATE
@@ -55,42 +61,37 @@ function weatherCard(apiData) {
 
     // Swapping background image in Jumbotron depending on the weather conditions provide.  Very basic.
     switch(true) {
-            // case precip >= 75 && Math.floor(temp) < 33:
+        //? 7) setAttributes has "styles" instead of "style"
             case precip >= 75 && temp < 33:
                 jumbo.setAttribute(
                     'style', 
                     'background: url("../assets/01-coldSnow.jpg"); background-repeat: no-repeat; background-position: center; background-size: cover;'
                 )
                 break;
-            // case precip >= 75 && Math.floor(temp) <= 75:
             case precip >= 75 && temp <= 75:
                 jumbo.setAttribute(
                     'style', 
                     'background: url("../assets/02-warmRain.jpg"); background-repeat: no-repeat; background-position: center; background-size: cover;'
                 )
                 break;
-            // case precip >= 75 && Math.floor(temp) > 75:
             case precip >= 75 && temp > 75:
                 jumbo.setAttribute(
                     'style', 
                     'background: url("../assets/03-summerRain.jpg"); background-repeat: no-repeat; background-position: center; background-size: cover;'
                 )
                 break;
-            // case Math.floor(temp) < 33:
             case temp < 33:
                 jumbo.setAttribute(
                     'style', 
                     'background: url("../assets/04-winter.jpg"); background-repeat: no-repeat; background-position: center; background-size: cover; height: 100vh'
                 )
                 break;
-            // case Math.floor(temp) < 75:
             case temp < 75:
                 jumbo.setAttribute(
                     'style', 
                     'background: url("../assets/05-spring.jpg"); background-repeat: no-repeat; background-position: center; background-size: cover;'
                 )
                 break;
-            // case Math.floor(temp) > 75:
             case temp > 75:
                 jumbo.setAttribute(
                     'style', 
@@ -107,6 +108,7 @@ function weatherCard(apiData) {
 
     // CLEANUP
     while(mainCard.firstChild) {
+        //? 8) has console.log(mainCard.firstChild) instead of remove()
         mainCard.firstChild.remove();
     }    
 
@@ -126,7 +128,7 @@ function weatherCard(apiData) {
         <li>Humidity:   ${current.humidity}%</li>
         <li>UV Index:   ${current.uv_index}</li>
         <li>Wind Dir:   ${current.wind_dir}</li>
-    `;
+    `;  //? 9) Humidity - Wind Dir doesn't have <current.> for their values.
 
     // INPUT VALUES
     header.innerText = current.weather_descriptions[0];
@@ -135,7 +137,7 @@ function weatherCard(apiData) {
     imgDiv.appendChild(cardImg);
     cardDiv.appendChild(imgDiv);
     bodyDiv.appendChild(header);
-    bodyDiv.appendChild(ul);
+    bodyDiv.appendChild(ul);  //? 10) not appending <ul> to bodyDiv
     cardBodyDiv.appendChild(bodyDiv);
     cardDiv.appendChild(cardBodyDiv);
     mainCard.appendChild(cardDiv);
@@ -147,4 +149,5 @@ function weatherCard(apiData) {
             'background: url("../assets/baseBG-IMG.jpg"); background-repeat: no-repeat; background-position: center; background-size: cover;'
         )
     }, 65000); // 1 min 5 secs
+    //? 11*) Removed setInterval from Broken only to see if they will incorporate anything.
 }

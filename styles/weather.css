@@ -4,6 +4,7 @@
     margin-bottom: 1em;
     width: 100vw;
     overflow-x: hidden;
+    /*? 1) "hidden" misspelled */
     scroll-behavior: smooth;
     background-position: center;
     background-size: cover;
@@ -17,7 +18,8 @@
 /* FORM */
 
 form div {
-    display: grid;
+    display: grid; 
+    /*? 2) missing ";" after grid */
     justify-content: center;
 }
 
@@ -39,5 +41,6 @@ div .card img {
 }
 
 div .card ul li {
+    /*? 3) Not stepping into "li" */
     list-style-type: none;
 }

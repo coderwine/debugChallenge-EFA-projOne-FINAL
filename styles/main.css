@@ -1,6 +1,7 @@
 @import '../styles/weather.css';
 @import '../styles/zomato.css';
 @import '../styles/quotes.css';
+/*? 1) not importing other stylesheets  */
 
 body {
     margin: 0;

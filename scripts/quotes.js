@@ -1,13 +1,12 @@
 const progURL = 'https://programming-quotes-api.herokuapp.com/quotes'
+//? 1) no URL
 
 // LOCATING ELEMENTS
 const jumbo = document.querySelector('.jumbotron');
-const subBtn = document.getElementById('start-btn');
+const subBtn = document.getElementById('start-btn'); //? 2) "#" in front of <start-btn>
 const foodMain = document.querySelector('.foodCart');
 const nxtBtn = document.getElementById('nxtBtn');
 const navFoot = document.querySelector('.quote');
-// const toast = document.getElementsByClassName('toast-body');
-const toast = document.querySelector('.toast-body');
 const wCardDisplay = document.querySelector('.displayCard');
 
 // GLOBAL VARIABLES
@@ -26,6 +25,7 @@ jumbo.setAttribute(
 // LISTENERS
 subBtn.addEventListener('click', startSearch);
 nxtBtn.addEventListener('click', cleanUp);
+//? 3) both <addEventListeners()> are set as <eventListener()>
 
 // FETCH
 let fetchQuote = () => {
@@ -34,6 +34,7 @@ let fetchQuote = () => {
         .then(res => res.json())
         .then(json => display(json))
         .catch(err => console.log(err));
+        //? 4) ";" after both .then()
 }
 
 // DISPLAY 
@@ -46,7 +47,7 @@ function display (data) {
     const para = document.createElement('para');
 
     // BUILD VARIABLES
-    let x = Math.floor((Math.random()*500)+1)
+    let x = Math.floor((Math.random()*500)+1) //? 5) Math.random() is x.random()
     let quoteObj = data[x];
     let bgFoot;
     
@@ -60,7 +61,7 @@ function display (data) {
     }
 
     // ELEMENT ATTRIBUTES
-    navFoot.className = bgFoot;
+    navFoot.className = bgFoot;  //? 6) navFoot.className is set as navFoot.class
     navFoot.style = "display: grid";
     nxtBtn.style ='display: visible';
     name.innerText = quoteObj.author;
@@ -78,7 +79,6 @@ function cleanUp() {
     while(navFoot.firstChild) {
         navFoot.firstChild.remove();
     }
-    // console.log('NXT CLICK')
     fetchQuote()
 
     // Created to reload browser after 2 minutes due to Weather API restrictions.  This also helps correct the jumbotron background bug for the moment.
@@ -91,9 +91,9 @@ function cleanUp() {
 function startSearch(e) {
     e.preventDefault();
 
-    weatherFetch();
+    weatherFetch();  //? 7*) invoking weatherFetching() instead of weatherFetch();
     cleanUp();
-    zomFetch();
+    zomFetch();  //? 8*) Not being invoked at all.
 }
 
 

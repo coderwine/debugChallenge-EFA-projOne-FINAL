@@ -1,8 +1,8 @@
 /* QUOTES */
 
 .quote {
+    /*? 1) typo ".quotes" instead of ".quote". */
     height: 20vh;
-    /* z-index: -1; */
     z-index: 0;
     margin-top: .15em;
     overflow: scroll;
@@ -11,6 +11,7 @@
 }
 
 #nxtBtn {
+    /*? 2) ID not being targeted. */
     position: absolute;
     right: 3em;
     bottom: 18vh;

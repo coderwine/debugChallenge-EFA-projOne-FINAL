@@ -1,7 +1,5 @@
 .foodCart {
-    /* display: flex; */
     display: grid;
-    /* flex-direction: row; */
     grid-auto-flow: column;
     justify-content: space-around;
     align-content: center;
@@ -18,20 +16,17 @@
     width: 200px;
     background-repeat: no-repeat;
     background-position: center;
-    /* background-size: 100%; */
     border: 1px solid black;
     margin: 1em;
     border-radius: 10px;
 }
 
-@media only screen and (max-width: 550px) {
+/*? Errors in Broken 
+   1) @media doesn't have size params
+   2) not targeting class foodCart correctly
+*/
+@media only screen and (max-width: 550px) {  
     .foodCart {
         grid-auto-flow: row;
     }
-
-    /* .rest-Images{ */
-        /* grid-auto-flow: row;
-        align-content: space-evenly; */
-        /* border: 1px solid black; */
-    /* } */
 } 

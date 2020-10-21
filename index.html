@@ -8,8 +8,10 @@
     <!-- BOOTSTRAP -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <!--? 1) Not Importing Bootstrap  -->
     <!-- MY CSS -->
     <link rel="stylesheet" href="./styles/main.css">
+    <!--? 2) href is not linking correctly  -->
 
     <title>Broken API App</title>
 </head>
@@ -124,10 +126,13 @@
         crossorigin="anonymous"></script>
 
     <!-- SCRIPTS -->
-    <script src="./scripts/keys.js"></script>
+    <script src="./scripts/keys.js"></script> 
+    <!-- ! keys.js isn't exactly needed -->
     <script src="./scripts/quotes.js"></script>
     <script src="./scripts/weather.js"></script>
+    <!-- ? 3) src for weather.js isn't linked correctly -->
     <script src="./scripts/restaurant.js"></script>
+    <!-- ? 4) restraurant.js not included -->
 </body>
 
 </html>
