@@ -9,35 +9,3 @@ body {
     display: flex;
     justify-content: center;
 }
-
-/* DO NOT TOUCH MODAL CODE */
-.modBTN {
-    position: fixed;
-    top: 1em;
-    right: 1em;
-    border: 1px solid white;
-    border-radius: 200px;
-}
-
-.modal-body #bronze {
-    padding: .2em;
-    border: 3px solid #da7618;
-    background-color: #da7618;
-    border-radius: 10px;
-    margin-bottom: 1em;
-}
-.modal-body #silver {
-    padding: .2em;
-    border: 3px solid #a2a2a2;
-    background-color: #a2a2a2;
-    border-radius: 10px;
-    margin-bottom: 1em;
-}
-.modal-body #gold {
-    padding: .2em;
-    border: 3px solid #b6b900;
-    background-color: #b6b900;
-    border-radius: 10px;
-    margin-bottom: 1em;
-}
-/* DO NOT TOUCH ABOVE MODAL CODE */

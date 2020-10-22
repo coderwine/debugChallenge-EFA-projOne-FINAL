@@ -8,12 +8,95 @@
     <!-- BOOTSTRAP -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <!--? 1) Not Importing Bootstrap  -->
+    
     <!-- MY CSS -->
     <link rel="stylesheet" href="./styles/main.css">
-    <!--? 2) href is not linking correctly  -->
+    <!--? 1) href is not linking correctly  -->
 
-    <title>Broken API App</title>
+    <title>Broken API App 2</title>
+    <!-- DO NOT MODIFY STYLE CODE BELOW -->
+    <style>
+        /* DO NOT TOUCH MODAL CODE */
+        .modal {
+            background-color: rgba(0, 0, 0, .75);
+        }
+
+        .modal-header {
+            background-color: darkred;
+            color: white;
+        }
+
+        .modal-header button span {
+            color: whitesmoke;
+        }
+
+        .modal-header img {
+            margin-right: .5em;
+        }
+
+        .modBTN {
+            position: fixed;
+            top: 1em;
+            right: 1em;
+            border: 1px solid white;
+            border-radius: 200px;
+        }
+
+        .modal-body #bronze {
+            padding: .2em;
+            border: 3px solid #80440d;
+            background-color: #da7618;
+            border-radius: 10px;
+            margin-bottom: 1em;
+            box-shadow: 4px 4px 2px slategrey;
+        }
+
+        .modal-body #bronze h3 {
+            text-align: right;
+            color: #da7618;
+            text-shadow: 2px 2px 2px black;
+            margin-right: .5em;
+        }
+
+        .modal-body #silver {
+            padding: .2em;
+            border: 3px solid #575757;
+            background-color: #a2a2a2;
+            border-radius: 10px;
+            margin-bottom: 1em;
+            box-shadow: 4px 4px 2px slategrey;
+        }
+
+        .modal-body #silver h3 {
+            text-align: right;
+            color: #a2a2a2;
+            text-shadow: 2px 2px 2px black;
+            margin-right: .5em;
+        }
+
+        .modal-body #gold {
+            padding: .2em;
+            border: 3px solid #5f5209;
+            background-color: #FFD700;
+            border-radius: 10px;
+            margin-bottom: 1em;
+            box-shadow: 4px 4px 2px slategrey;
+        }
+
+        .modal-body #gold h3 {
+            text-align: right;
+            color: #FFD700;
+            text-shadow: 2px 2px 2px black;
+            margin-right: .5em;
+        }
+
+        .hintBTN {
+            margin-bottom: 2em;
+        }
+
+        /* DO NOT TOUCH ABOVE MODAL CODE */
+        </style>
+        <!-- DO NOT MODIFY STYLE CODE ABOVE -->
 </head>
 
 <body>
@@ -56,6 +139,7 @@
     </div>
 
     <!-- MODAL - DO NOT ALTER THIS CODE -->
+
     <!-- Launch static backdrop modal -->
 
     <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-question-circle-fill modBTN" fill="red"
@@ -71,38 +155,58 @@
         <div class="modal-dialog-scrollable modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="staticBackdropLabel">EFA Broken API Project I Instructions:</h5>
+                    <img src="./assets/EF.png" alt="Eleven Fifty Logo">
+                    <h5 class="modal-title" id="staticBackdropLabel">EFA Broken API Project Instructions:</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
+                    <section>
+                        <p>This challenge has three different APIs that we are trying to fix. The purpose of this
+                            challenge is to practice debugging a broken application to get it into a working format.
+                        </p>
+                        <p>We are using Bootstrap and customized CSS. Each API has its own JS and CSS files. This isn't
+                            the cleanest code when completed but functional. This is not the fastest app. Feel free to
+                            clean it up if you so desire. It will be important to consider the limitations of the APIs
+                            being used and read the docs provided. In all levels of the challenge, it will be expected
+                            to fix issues within the JS and CSS files (possibly in relation to the HTML). Remember to
+                            use console.log() to your advantage.</p>
+                        <p><b>DO NOT MODIFY THE MODAL</b>. There are comments in the code warning against this. The only
+                            purpose of it is to provide instructions to this challenge <i
+                                style="font-size: xx-small;">(plus there are hints)</i>. Everything else is fair game to
+                            modify, change up, comment up and make your own!</p>
+                    </section>
                     <div id="bronze">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam iure est alias perspiciatis dolor
-                            molestias ipsum quia aspernatur consectetur, similique voluptate labore rerum dicta! Labore
-                            consequatur exercitationem quod excepturi ut!</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam iure est alias perspiciatis dolor
-                            molestias ipsum quia aspernatur consectetur, similique voluptate labore rerum dicta! Labore
-                            consequatur exercitationem quod excepturi ut!</p>
+                        <h3>BRONZE</h3>
+                        <p>You will be focused on getting the Quote API functional. Here is the link to the
+                            documentation for the <a href='https://github.com/skolakoda/programming-quotes-api'
+                                target='_blank'>Quote API</a>. The goal is to trigger a quote at the bottom of the page
+                            whenever the Submit Button is CLICKED. There will also be a "next" button that will allow us
+                            to generate a new quote.
+                        </p>
                     </div>
-                    
+
                     <div id="silver">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam iure est alias perspiciatis dolor
-                            molestias ipsum quia aspernatur consectetur, similique voluptate labore rerum dicta! Labore
-                            consequatur exercitationem quod excepturi ut!</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam iure est alias perspiciatis dolor
-                            molestias ipsum quia aspernatur consectetur, similique voluptate labore rerum dicta! Labore
-                            consequatur exercitationem quod excepturi ut!</p>
+                        <h3>SILVER</h3>
+                        <p>In this portion of the challenge, we will use an input to search a city name and create a
+                            card to display a quick readout of weather in that city. We will also display our
+                            temperatures in Fahrenheit. Here is the documentation for <a
+                                href="https://weatherstack.com/documentation" target="_blank">Weather Stack</a> to look
+                            over. We will be displaying the name of the location as well and changing the background of
+                            our display depending on the weather conditions. *how can we test for those conditions?</p>
                     </div>
 
                     <div id="gold">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam iure est alias perspiciatis dolor
-                            molestias ipsum quia aspernatur consectetur, similique voluptate labore rerum dicta! Labore
-                            consequatur exercitationem quod excepturi ut!</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam iure est alias perspiciatis dolor
-                            molestias ipsum quia aspernatur consectetur, similique voluptate labore rerum dicta! Labore
-                            consequatur exercitationem quod excepturi ut!</p>
+                        <h3>GOLD</h3>
+                        <p>For Gold, we will be displaying 3 random restaurants within a collection of "hot spots" from
+                            <a href="https://developers.zomato.com/api#headline1" target="_blank">Zomato</a> as images
+                            that we can then click and view in a new tab. *Consider the limitations and if a user
+                            searches a location that may have less than 3 restaurants listed.</p>
                     </div>
+
+                    <button class='btn btn-outline-warning btn-block btn-sm hintBTN'
+                        onmousedown="hint()">hints...</button>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-success" data-dismiss="modal">Understood</button>
@@ -110,6 +214,21 @@
             </div>
         </div>
     </div>
+
+    <script>
+        let n = 0;
+
+        let hint = () => {
+
+            const hints = [
+                'There are a total of 39 errors.', 'JS Tracking = console.log()', 'Check for TYPSO!', 'What\'s the difference between class in HTML vs JavaScript?', 'I just had a Math.random() thought', 'How can you test for conditions that may change later? **cough** dummy variables **cough**', 'One API may have a limit as to how many times you can call it over a period of time.', 'Async AND Await', 'The semi-colon is vital when we style!', 'Duck Duck Google', 'What are headers? - zomato...', 'fetch and theeeeennnn?', 'Is my # needed here?', 'What could we add to event listeners?', 'Whether we invoke this or that...', 'Looks like it\'s locked... probably consider a key.', 'Beware of the Revisible Man!', 'Maybe freezing is multiplied by 1.8 then we add...', 'Whether you have styles or not... ', 'Drilling objects means we find what we want!', 'Children... perhaps we append them?', 'While here, what should we remove?', 'I put 3.541 rugs on these tMath.floor()s.', 'Passed the num!', 'What\'s the opposite of an endless loop?', 'When hungry - getFood!', 'How long do we stand in time out?'
+            ];
+
+            alert(hints[n]);
+            n === hints.length - 1 ? n = 0 : n++
+        }
+
+    </script>
 
     <!-- DO NOT ALTER ABOVE MODAL CODE -->
 
@@ -126,13 +245,13 @@
         crossorigin="anonymous"></script>
 
     <!-- SCRIPTS -->
-    <script src="./scripts/keys.js"></script> 
+    <script src="./scripts/keys.js"></script>
     <!-- ! keys.js isn't exactly needed -->
     <script src="./scripts/quotes.js"></script>
     <script src="./scripts/weather.js"></script>
-    <!-- ? 3) src for weather.js isn't linked correctly -->
+    <!-- ? 2) src for weather.js isn't linked correctly -->
     <script src="./scripts/restaurant.js"></script>
-    <!-- ? 4) restraurant.js not included -->
+    <!-- ? 3) restraurant.js not included -->
 </body>
 
 </html>

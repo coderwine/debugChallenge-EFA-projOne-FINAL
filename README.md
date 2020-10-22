@@ -36,7 +36,7 @@
 - Errors in CSS files are detailed in each file.
 
 **Basic Errors:**
-- index.html has 4 errors and main.css has 1* error (no imports for other stylesheets).
+- index.html has 3 errors and main.css has 1* error (no imports for other stylesheets).
 
 **Programming Quote:**
 - This will populate a random quote at the bottom of the screen.  Users will be able to click a button to fetch a new quote.
