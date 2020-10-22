@@ -6,7 +6,11 @@
 
 **What this Challenge expects**
 
-- API Keys are still new concepts but it should be understood that they exist and what, generally, how they are used.  Students will be expected to obtain their own FREE API Keys to incorporate into this project in order to get it to work.  This particular build has the keys stored into a keys.js file that has been tagged in the .gitignore so they do not exist in ANY way within the project.  Students can either set their keys within each respected script file or house them in a stored file like this current build.
+- This is directed towards students learning JS fundamentals (Gold Badge).
+- API Keys are still new concepts but it should be understood that they exist and what, generally, how they are used.  
+- Students will be expected to obtain their own FREE API Keys to incorporate into this project in order to get it to work.  
+- This particular build has the keys stored into a keys.js file that has been tagged in the .gitignore so they do not exist in ANY way within the project.  
+- Students can either set their keys within each respected script file or house them in a stored file like this current build.  There are currently NO variables to store these values and will need to be created.
 
 **What this Challenge is NOT meant to be**
 
@@ -17,6 +21,8 @@
 - Although this is a small "playground" to tinker in, there are two main things that should NOT be altered.  This is the MODAL and ASSETS Folder.  No issues will be housed within these branches of code / file names.  However, this doesn't mean that naming conventions may have issues elsewhere in other files.
 
 --------------------------------------------------------------------------------
+**Broken API App Link**
+- https://github.com/coderwine/EFA-debugChallenge-ProjOne-BROKEN
 
 **Documentation Links**
 - Programming Quotes API
@@ -32,7 +38,7 @@
 
 **ERRORS / CONCEPTS within Files**
 
-- Errors in JS files are denoted with <//? #) description of error>
+- Errors in JS files are denoted with < //? #) description of error >
 - Errors in CSS files are detailed in each file.
 
 **Basic Errors:**
